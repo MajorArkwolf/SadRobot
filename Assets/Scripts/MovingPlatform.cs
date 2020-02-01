@@ -11,13 +11,14 @@ public class MovingPlatform : MonoBehaviour {
     private float startTime;
     private float endTime;
     private float distance;
+    private Vector3 lastPosition { get; set; } = new Vector3();
+    private Vector3 deltaPosition { get; set; } = new Vector3();
 
     private List<Vector3> path = new List<Vector3>();
     private int pathIndex = 0;
     private bool isReturning = false;
 
     private void SetupNextJourney() {
-        Debug.Log(pathIndex + "\t" + nextPath() + "");
         startTime = Time.time;
         endTime = Time.time + Math.Abs(Vector3.Distance(path[pathIndex],
             path[nextPath()]) / speed);
@@ -27,6 +28,7 @@ public class MovingPlatform : MonoBehaviour {
         path.Add(transform.position);
         path.AddRange(userPath);
         SetupNextJourney();
+        lastPosition = transform.position;
     }
 
     private int nextPath() {
@@ -61,5 +63,7 @@ public class MovingPlatform : MonoBehaviour {
             Vector3.Distance(path[pathIndex], path[nextPath()]);
 
         transform.position = Vector3.Lerp(path[pathIndex], path[nextPath()], frac);
+        deltaPosition = lastPosition - transform.position;
+        lastPosition = transform.position;
     }
 }
