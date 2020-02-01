@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : PhysicsObject
 {
-
-    public float maxSpeed = 7;
+    public int level = 0;
+    public float maxSpeed = 3;
     public float jumpTakeOffSpeed = 7;
 
     private SpriteRenderer spriteRenderer;
@@ -29,7 +29,7 @@ public class PlayerController : PhysicsObject
 
         move.x = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded && level > 1)
         {
             velocity.y = jumpTakeOffSpeed;
         }
@@ -52,13 +52,14 @@ public class PlayerController : PhysicsObject
 
         targetVelocity = move * maxSpeed;
 
-        if (spriteRenderer.flipX && targetVelocity.magnitude > 0.01f)
-        {
-            animator.Play("p1_player_move_left");
-            idle = false;
-        } else if (!spriteRenderer.flipX && targetVelocity.magnitude > 0.01f)
+        if (move.x < 0 && targetVelocity.magnitude > 0.01f)
         {
             animator.Play("p1_player_move_right");
+            idle = false;
+        } else if (move.x > 0 && targetVelocity.magnitude > 0.01f)
+        {
+            animator.Play("p1_player_move_left");
+            
             idle = false;
         } else
         {
@@ -66,6 +67,15 @@ public class PlayerController : PhysicsObject
             {
                 animator.Play("p1_player_idle");
                 idle = true;
+            }
+        }
+
+        void levelUp()
+        {
+            ++level;
+            if (level > 1)
+            {
+                maxSpeed = 7;
             }
         }
     }
