@@ -47,4 +47,4 @@ MonoBehaviour:
   toInstantiate: {fileID: 3148102939310406231, guid: 9559d155e60bb384a907c70f76fe0aff,
     type: 3}
   position: {x: 0, y: 0, z: 0}
-  repeat: 0
+  repeat: 1
