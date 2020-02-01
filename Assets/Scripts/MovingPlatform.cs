@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour {
-    public float speed = 1.0f;
+    public float speed = 10.0f;
     public Boolean isCircular = false;
 
     public Vector3[] userPath;
     private float startTime;
     private float endTime;
     private float distance;
-    private Vector3 lastPosition { get; set; } = new Vector3();
-    private Vector3 deltaPosition { get; set; } = new Vector3();
+    public Vector3 lastPosition { get; set; } = new Vector3();
+    public Vector3 deltaPosition { get; set; } = new Vector3();
 
     private List<Vector3> path = new List<Vector3>();
     private int pathIndex = 0;
@@ -63,7 +63,7 @@ public class MovingPlatform : MonoBehaviour {
             Vector3.Distance(path[pathIndex], path[nextPath()]);
 
         transform.position = Vector3.Lerp(path[pathIndex], path[nextPath()], frac);
-        deltaPosition = lastPosition - transform.position;
+        deltaPosition = transform.position - lastPosition;
         lastPosition = transform.position;
     }
 }
