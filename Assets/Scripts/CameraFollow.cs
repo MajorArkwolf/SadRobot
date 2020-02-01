@@ -36,7 +36,8 @@ public class CameraFollow : MonoBehaviour
 
         if (Vector3.Distance(transform.position, newPos) < smallCutoff)
         {
-
+            // do nothin
+            //transform.position = newPos;
         }
         else
         {
