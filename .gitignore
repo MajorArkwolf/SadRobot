@@ -60,3 +60,8 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+#Fuck Off Github
+Assets/Plugins/GitHub/**
+Assets/Plugins/GitHub.meta
+Assets/Plugins.meta
