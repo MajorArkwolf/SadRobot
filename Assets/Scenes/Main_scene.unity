@@ -1368,6 +1368,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.06
       objectReference: {fileID: 0}
+    - target: {fileID: 322204035842975415, guid: b2340867784d31841a516fbdef5a27fe,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 322204035842975418, guid: b2340867784d31841a516fbdef5a27fe,
         type: 3}
       propertyPath: m_Name

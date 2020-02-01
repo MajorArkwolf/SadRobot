@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMovement : MonoBehaviour
 {
+    public int status;
     public float speed;
 
     private Rigidbody2D rb2d;
@@ -11,6 +12,7 @@ public class MainMovement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        status = 0;
     }
 
     // Update is called once per frame
@@ -27,5 +29,10 @@ public class MainMovement : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         rb2d.AddForce(movement * speed);
+    }
+
+    public void levelUp()
+    {
+        status++;
     }
 }
