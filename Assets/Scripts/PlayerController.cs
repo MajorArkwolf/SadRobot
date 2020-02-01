@@ -11,6 +11,11 @@ public class PlayerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    private bool idle = false;
+
+    [SerializeField]
+    float uprightCorrection;
+
     // Use this for initialization
     void Awake()
     {
@@ -36,15 +41,32 @@ public class PlayerController : PhysicsObject
             }
         }
 
-        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+        bool flipSprite = (spriteRenderer.flipX ? (move.x < 0.00f) : (move.x > 0.01f));
         if (flipSprite)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            //spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
+
+        if (spriteRenderer.flipX && targetVelocity.magnitude > 0.01f)
+        {
+            animator.Play("p1_player_move_left");
+            idle = false;
+        } else if (!spriteRenderer.flipX && targetVelocity.magnitude > 0.01f)
+        {
+            animator.Play("p1_player_move_right");
+            idle = false;
+        } else
+        {
+            if (!idle)
+            {
+                animator.Play("p1_player_idle");
+                idle = true;
+            }
+        }
     }
 }
