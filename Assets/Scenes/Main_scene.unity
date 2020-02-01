@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 896378940}
   - component: {fileID: 896378939}
   - component: {fileID: 896378941}
+  - component: {fileID: 896378942}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -397,8 +398,8 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 1
   maxSpeed: 7
-  jumpTakeOffSpeed: 7
-  uprightCorrection: 8
+  jumpTakeOffSpeed: 10
+  uprightCorrection: 0
 --- !u!70 &896378940
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -434,6 +435,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &896378942
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896378934}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3420301, y: 0.66926336}
+      - {x: -0.039331138, y: 0.69288737}
+      - {x: -0.5137595, y: 0.718004}
+      - {x: -0.49209934, y: -0.037030816}
+      - {x: -0.3590253, y: -0.051648617}
+      - {x: -0.34228438, y: -0.65036887}
+      - {x: -0.18302286, y: -0.64369196}
+      - {x: -0.012510389, y: -1.0059026}
+      - {x: 0.076367736, y: -1.0118086}
+      - {x: 0.28056926, y: -0.6375552}
+      - {x: 0.43847358, y: -0.61662793}
+      - {x: 0.46008605, y: -0.045909435}
+      - {x: 0.61909395, y: -0.02115804}
+      - {x: 0.61318797, y: 0.62104154}
 --- !u!1 &990524127
 GameObject:
   m_ObjectHideFlags: 0

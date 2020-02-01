@@ -45,7 +45,7 @@ public class PlayerController : PhysicsObject
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, Time.deltaTime* uprightCorrection);
+        transform.rotation = Quaternion.identity; // Quaternion.Slerp(transform.rotation, Quaternion.identity, Time.deltaTime* uprightCorrection);
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
