@@ -54,12 +54,11 @@ public class PlayerController : PhysicsObject
 
         if (move.x < 0 && targetVelocity.magnitude > 0.01f)
         {
-            animator.Play("p1_player_move_right");
+            animator.Play("p1_player_move_left");
             idle = false;
         } else if (move.x > 0 && targetVelocity.magnitude > 0.01f)
         {
-            animator.Play("p1_player_move_left");
-            
+            animator.Play("p1_player_move_right");
             idle = false;
         } else
         {
