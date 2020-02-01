@@ -41,7 +41,6 @@ public class CameraFollow : MonoBehaviour
         }
         else
         {
-
             transform.position = Vector3.SmoothDamp(transform.position, newPos,
                 ref velocity, smoothFactor * Time.deltaTime);
         }
