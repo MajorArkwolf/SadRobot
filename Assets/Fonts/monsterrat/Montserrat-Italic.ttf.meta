@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: ab995058715d6b548a8fe86aafb04516
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Montserrat
+  fontNames:
+  - Montserrat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 641b6522e205ed144aa50fc4f76851f5, type: 3}
+  - {fileID: 12800000, guid: 2193b8c2b562e2e41aed81713cf06f66, type: 3}
+  - {fileID: 12800000, guid: 483abee3390f29445aaabf41bb750e66, type: 3}
+  - {fileID: 12800000, guid: 4293ac7462d244c4da22a1593588d9d5, type: 3}
+  - {fileID: 12800000, guid: 644c10067696a3d4ab2a5d213e90edba, type: 3}
+  - {fileID: 12800000, guid: 660b9ba6f54ca334fa688a08acf070c0, type: 3}
+  - {fileID: 12800000, guid: 5524a5d7ef5885e46bb12d59c75e03e2, type: 3}
+  - {fileID: 12800000, guid: 63daaf1930d19884294c93b497f8c2ad, type: 3}
+  - {fileID: 12800000, guid: 042f504a12349f14a92643fa77c64887, type: 3}
+  - {fileID: 12800000, guid: 256ea76cebda7e74fb9635cd62682397, type: 3}
+  - {fileID: 12800000, guid: 518f7d3dda896ae4fbb0ad4f721d00ae, type: 3}
+  - {fileID: 12800000, guid: a4f0468db3b51d44dbd61fdf283ae99e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

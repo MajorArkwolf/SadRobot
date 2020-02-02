@@ -29,7 +29,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector3 newPos = target.transform.position + offset;
         newPos.z = zLock;
