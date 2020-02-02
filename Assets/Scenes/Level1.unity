@@ -484,7 +484,7 @@ PrefabInstance:
     - target: {fileID: 5142448644032278392, guid: ff0d0072a62474b40a392051d8500043,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5142448644032278392, guid: ff0d0072a62474b40a392051d8500043,
         type: 3}
@@ -13446,7 +13446,7 @@ PrefabInstance:
     - target: {fileID: 7422492483138582402, guid: 6a6e35f29995dff4fa80633aef0ecddc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7422492483138582402, guid: 6a6e35f29995dff4fa80633aef0ecddc,
         type: 3}
@@ -13476,7 +13476,7 @@ GameObject:
   - component: {fileID: 1165821846}
   - component: {fileID: 1165821845}
   - component: {fileID: 1165821844}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Next Level Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

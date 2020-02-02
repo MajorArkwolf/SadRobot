@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!50 &50160074747544898
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347986389325775103}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3739272784045933003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,5 +99,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 50523228673500150, guid: c0a27459c00904b479612de19edec996, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c0a27459c00904b479612de19edec996, type: 3}
+--- !u!1 &5347986389325775103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8778445312373752116, guid: c0a27459c00904b479612de19edec996,
+    type: 3}
+  m_PrefabInstance: {fileID: 3739272784045933003}
+  m_PrefabAsset: {fileID: 0}
