@@ -16,8 +16,8 @@ TagManager:
   - Player
   - PickUp
   - Interactive
-  - 
-  - 
+  - OneWayPlatform
+  - Trigger
   - 
   - 
   - 
