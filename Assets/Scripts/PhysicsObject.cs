@@ -103,7 +103,8 @@ public class PhysicsObject : MonoBehaviour
 
         }
 
-        rb2d.position = rb2d.position + move.normalized * distance;
+        //rb2d.position = rb2d.position + move.normalized * distance;
+        transform.position = (Vector2)transform.position + move.normalized * distance;
     }
 
 }

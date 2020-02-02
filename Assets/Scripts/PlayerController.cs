@@ -41,25 +41,28 @@ public class PlayerController : PhysicsObject
             }
         }
 
+        if(!grounded) {
+            this.transform.SetParent(null);
+        }
+
         bool flipSprite = (spriteRenderer.flipX ? (move.x < 0.00f) : (move.x > 0.01f));
         if (flipSprite)
         {
             //spriteRenderer.flipX = !spriteRenderer.flipX;
         }
 
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        //animator.SetBool("grounded", grounded);
+        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
 
         if (move.x < 0 && targetVelocity.magnitude > 0.01f)
         {
-            animator.Play("p1_player_move_right");
+            animator.Play("p1_player_move_left");
             idle = false;
         } else if (move.x > 0 && targetVelocity.magnitude > 0.01f)
         {
-            animator.Play("p1_player_move_left");
-            
+            animator.Play("p1_player_move_right");
             idle = false;
         } else
         {
