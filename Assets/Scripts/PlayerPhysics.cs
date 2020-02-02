@@ -18,11 +18,13 @@ public class PlayerPhysics : MonoBehaviour {
 	private Animator _animator;
 	private RaycastHit2D _lastControllerColliderHit;
 	private Vector3 _velocity;
+	private Rigidbody2D _rb2d;
 
 
 	void Awake() {
 		_animator = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
+		_rb2d = GetComponent<Rigidbody2D>();
 
 		// listen to some events for illustration purposes
 		_controller.onControllerCollidedEvent += onControllerCollider;
@@ -67,22 +69,28 @@ public class PlayerPhysics : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.RightArrow)) {
 			normalizedHorizontalSpeed = 1;
+
+
 			if (transform.localScale.x < 0f)
-				transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
 			if (_controller.isGrounded) {
 				//_animator.Play(Animator.StringToHash("Run"));
 			}
 		} else if (Input.GetKey(KeyCode.LeftArrow)) {
 			normalizedHorizontalSpeed = -1;
+
+
 			if (transform.localScale.x > 0f)
-				transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+				//transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
 			if (_controller.isGrounded) {
 				//_animator.Play(Animator.StringToHash("Run"));
 			}
 		} else {
 			normalizedHorizontalSpeed = 0;
+
+			// Might be idle, no input
 
 			if (_controller.isGrounded) {
 				//_animator.Play(Animator.StringToHash("Idle"));
@@ -96,7 +104,6 @@ public class PlayerPhysics : MonoBehaviour {
 			transform.SetParent(null);
 			//_animator.Play(Animator.StringToHash("Jump"));
 		}
-
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
@@ -113,6 +120,25 @@ public class PlayerPhysics : MonoBehaviour {
 		}
 
 		_controller.move(_velocity * Time.deltaTime);
+
+
+		if (Mathf.Abs(_velocity.x) > 0.01f)
+		{
+			_animator.SetBool("idle", false);
+			if (_velocity.x > 0f)
+			{
+				_animator.SetBool("right", true);
+			}
+			else if (_velocity.x < 0f)
+			{
+				_animator.SetBool("right", false);
+			}
+		}
+		else
+		{
+			//Debug.Log("idled");
+			_animator.SetBool("idle", true);
+		}
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;

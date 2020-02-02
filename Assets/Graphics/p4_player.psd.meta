@@ -448,7 +448,7 @@ TextureImporter:
       name: p4_jump3_right
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 96
         width: 32
         height: 32
@@ -468,7 +468,7 @@ TextureImporter:
       name: p4_jump4_right
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 96
         width: 32
         height: 32

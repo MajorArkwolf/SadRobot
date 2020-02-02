@@ -148,7 +148,6 @@ namespace Prime31 {
 
 		#endregion
 
-
 		/// <summary>
 		/// holder for our raycast origin corners (TR, TL, BR, BL)
 		/// </summary>
@@ -165,6 +164,12 @@ namespace Prime31 {
 		/// </summary>
 		List<RaycastHit2D> _raycastHitsThisFrame = new List<RaycastHit2D>(2);
 
+		/// <summary>
+		/// The reference to the animation controller. Updates the animation state in accordance with the
+		/// current movement and idle state
+		/// </summary>
+		Animator animator;
+
 		// horizontal/vertical movement data
 		float _verticalDistanceBetweenRays;
 		float _horizontalDistanceBetweenRays;
@@ -173,6 +178,8 @@ namespace Prime31 {
 		// the reason is so that if we reach the end of the slope we can make an adjustment to stay grounded
 		bool _isGoingUpSlope = false;
 
+		// Is the player in the menu, if they are, disable movement
+		public bool inMenu = true;
 
 		#region Monobehaviour
 
@@ -184,6 +191,7 @@ namespace Prime31 {
 			transform = GetComponent<Transform>();
 			boxCollider = GetComponent<BoxCollider2D>();
 			rigidBody2D = GetComponent<Rigidbody2D>();
+			animator = GetComponent<Animator>();
 
 			// here, we trigger our properties that have setters with bodies
 			skinWidth = _skinWidth;
@@ -248,8 +256,9 @@ namespace Prime31 {
 				handleVerticalSlope(ref deltaMovement);
 
 			// now we check movement in the horizontal dir
-			if (deltaMovement.x != 0f)
-				moveHorizontally(ref deltaMovement);
+			if (deltaMovement.x != 0f) 
+				moveHorizontally(ref deltaMovement); 
+
 
 			// next, check movement in the vertical dir
 			if (deltaMovement.y != 0f)
@@ -290,6 +299,15 @@ namespace Prime31 {
 			} while (!isGrounded);
 		}
 
+
+		/// <summary>
+		/// Set the state of the menu
+		/// </summary>
+		public void SetInMenu(bool inMenu)
+		{
+			this.inMenu = inMenu;
+			animator.SetBool("menu", inMenu);
+		}
 
 		/// <summary>
 		/// this should be called anytime you have to modify the BoxCollider2D at runtime. It will recalculate the distance between the rays used for collision detection.
