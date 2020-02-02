@@ -15,8 +15,13 @@ public class BulletBoi : MonoBehaviour
         {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+        } else if(collision.gameObject.name.Contains("cannon"))
+        {
+            return;
+        } else
+        {
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 
     // Update is called once per frame
