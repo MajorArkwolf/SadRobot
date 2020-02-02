@@ -35,12 +35,7 @@ public class MenuController : MonoBehaviour
             Time.timeScale = 0.0f;
         } else if (!main && paused && Input.GetKeyDown(KeyCode.Escape))
         {
-            UIObject.SetActive(false);
-            mainMenu.SetActive(false);
-            pauseMenu.SetActive(false);
-
-            paused = false;
-            Time.timeScale = 1.0f;
+            Unpause();
         }
     }
 
@@ -54,5 +49,15 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void Unpause()
+    {
+        UIObject.SetActive(false);
+        mainMenu.SetActive(false);
+        pauseMenu.SetActive(false);
+
+        paused = false;
+        Time.timeScale = 1.0f;
     }
 }
