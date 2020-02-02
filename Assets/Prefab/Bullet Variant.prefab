@@ -62,10 +62,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4761494659285561853, guid: c0a27459c00904b479612de19edec996,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fbb8fe0c29ccdd745a313b482f79271a,
+        type: 3}
+    - target: {fileID: 4761494659285561853, guid: c0a27459c00904b479612de19edec996,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8778445312373752116, guid: c0a27459c00904b479612de19edec996,
         type: 3}
       propertyPath: m_Name
-      value: Bullet
+      value: Bullet Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a27459c00904b479612de19edec996, type: 3}
