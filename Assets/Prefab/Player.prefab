@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.36}
+  m_Offset: {x: 0, y: -0.64}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,9 +164,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -25
   runSpeed: 8
+  pushSpeed: 4
   groundDamping: 20
   inAirDamping: 5
   jumpHeight: 3
+  pickupReset: 0.5
 --- !u!114 &5142448644032278370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ MonoBehaviour:
   _skinWidth: 0.02
   platformMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1025
   triggerMask:
     serializedVersion: 2
     m_Bits: 4096
