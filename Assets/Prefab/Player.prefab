@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5142448644032278374}
   - component: {fileID: 5142448644032278373}
   - component: {fileID: 5142448644032278372}
-  - component: {fileID: 5142448644032278371}
   - component: {fileID: 5142448644032278370}
+  - component: {fileID: 1160562212}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.36}
+  m_Offset: {x: 0, y: -0.65}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -141,7 +141,7 @@ Animator:
   m_GameObject: {fileID: 5142448644032278369}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ca1d5da58c2a144cb509d11789f79d3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2297d278517b8ac49a77635ddc7de639, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -150,23 +150,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5142448644032278371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142448644032278369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e258ce623b1f444dab126b0c15cf51d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: -25
-  runSpeed: 8
-  groundDamping: 20
-  inAirDamping: 5
-  jumpHeight: 3
 --- !u!114 &5142448644032278370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,3 +211,22 @@ MonoBehaviour:
   totalHorizontalRays: 8
   totalVerticalRays: 4
   inMenu: 1
+--- !u!114 &1160562212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142448644032278369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e258ce623b1f444dab126b0c15cf51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -25
+  runSpeed: 8
+  pushSpeed: 4
+  groundDamping: 20
+  inAirDamping: 5
+  jumpHeight: 3
+  pickupReset: 0.5
