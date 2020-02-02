@@ -1,10 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD:Assets/Scripts/PlayerPhysics.cs.meta
-guid: 2e258ce623b1f444dab126b0c15cf51d
-=======
-guid: 21aa69416ee79cd4e85828def5184210
->>>>>>> develop:Assets/Scripts/MenuController.cs.meta
+guid: 976f91fdab428ed478f5bd105a994541
 =======
 guid: 2e258ce623b1f444dab126b0c15cf51d
 >>>>>>> develop
