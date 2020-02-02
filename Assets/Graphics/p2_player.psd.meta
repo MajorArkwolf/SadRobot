@@ -128,7 +128,7 @@ TextureImporter:
       name: p2_move1_right
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 32
         width: 32
         height: 32
@@ -168,7 +168,7 @@ TextureImporter:
       name: p2_move3_right
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 32
         width: 32
         height: 32

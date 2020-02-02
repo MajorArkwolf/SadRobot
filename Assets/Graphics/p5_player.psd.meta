@@ -12,18 +12,18 @@ TextureImporter:
     21300014: p5_move4_left
     21300016: p6_idle_right
     21300018: p6_idle_left
-    21300020: p6_move1_left
-    21300022: p6_move2_left
-    21300024: p6_move3_left
-    21300026: p6_move4_left
-    21300028: p6_move1_right
-    21300030: p6_move2_right
-    21300032: p6_move3_right
-    21300034: p6_move4_right
+    21300020: p5_movelift1_left
+    21300022: p5_movelift2_left
+    21300024: p5_movelift3_left
+    21300026: p5_movelift4_left
+    21300028: p5_movelift1_right
+    21300030: p5_movelift2_right
+    21300032: p5_movelift3_right
+    21300034: p5_movelift4_right
     21300036: p5_liftjump1_left
     21300038: p5_liftjump2_left
     21300040: p5_liftjump3_left
-    21300042: p5_liftpump4_left
+    21300042: p5_liftjump4_left
     21300044: p5_liftjump5_left
     21300046: p5_liftjump6_left
     21300048: p5_liftjump1_right
@@ -337,7 +337,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move1_left
+      name: p5_movelift1_left
       rect:
         serializedVersion: 2
         x: 0
@@ -357,7 +357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move2_left
+      name: p5_movelift2_left
       rect:
         serializedVersion: 2
         x: 32
@@ -377,7 +377,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move3_left
+      name: p5_movelift3_left
       rect:
         serializedVersion: 2
         x: 64
@@ -397,7 +397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move4_left
+      name: p5_movelift4_left
       rect:
         serializedVersion: 2
         x: 96
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move1_right
+      name: p5_movelift1_right
       rect:
         serializedVersion: 2
         x: 0
@@ -437,7 +437,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move2_right
+      name: p5_movelift2_right
       rect:
         serializedVersion: 2
         x: 32
@@ -457,7 +457,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move3_right
+      name: p5_movelift3_right
       rect:
         serializedVersion: 2
         x: 64
@@ -477,7 +477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p6_move4_right
+      name: p5_movelift4_right
       rect:
         serializedVersion: 2
         x: 96
@@ -557,7 +557,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p5_liftpump4_left
+      name: p5_liftjump4_left
       rect:
         serializedVersion: 2
         x: 96
@@ -780,7 +780,7 @@ TextureImporter:
       name: p5_jump2_left
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 32
         width: 32
         height: 32
@@ -820,7 +820,7 @@ TextureImporter:
       name: p5_jump4_left
       rect:
         serializedVersion: 2
-        x: 128
+        x: 129
         y: 32
         width: 32
         height: 32
@@ -900,7 +900,7 @@ TextureImporter:
       name: p5_jump2_right
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 0
         width: 32
         height: 32
