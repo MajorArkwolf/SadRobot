@@ -23,7 +23,6 @@ public class PlayerPhysics : MonoBehaviour {
 	private Vector3 _velocity;
 	private GameObject block;
 	private float blockPickupTime;
-	private float blockGap = 2.25f;
 	private Rigidbody2D _rb2d;
 
 
@@ -83,21 +82,25 @@ public class PlayerPhysics : MonoBehaviour {
 
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update() {
+
         if (block != null) {
 			var pos = transform.position;
-			pos.y += blockGap;
+			var gap = block.GetComponent<BoxCollider2D>().size * block.transform.lossyScale;
+			gap *= 1.5f;
+
+			pos.y += gap.y;
 			block.transform.position = pos;
 			block.GetComponent<InteractivePhysics>()._velocity = Vector3.zero;
+			if (Time.time > blockPickupTime + pickupReset &&
+	            Input.GetKey(KeyCode.Space)) {
+				var isLeft = this.transform.lossyScale.x > 0 ? true : false;
+
+				block.transform.position = transform.position + new Vector3(
+					isLeft ? gap.x : -gap.x, gap.y, 0.0f);
+				block = null;
+			}
 		}
 
-        if (block != null && Time.time > blockPickupTime + pickupReset &&
-			Input.GetKey(KeyCode.Space)) {
-			var isLeft = this.transform.lossyScale.x > 0 ? true : false;
-			var xOffset = isLeft ? 2.0f : -2.0f;
-
-			block.transform.position = transform.position + new Vector3(xOffset, blockGap, 0.0f);
-			block = null;
-        }
 
 		if (_controller.isGrounded)
 			_velocity.y = 0;
