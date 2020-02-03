@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
     GameObject target;
 
     [SerializeField]
-    Vector3 offset;
+    public Vector3 offset;
 
     [SerializeField]
     int zLock;
@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = target.transform.position;
+        transform.position = target.transform.position + offset;
     }
 
     // Update is called once per frame

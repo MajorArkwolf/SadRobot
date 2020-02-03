@@ -307,6 +307,15 @@ namespace Prime31 {
 		{
 			this.inMenu = inMenu;
 			animator.SetBool("menu", inMenu);
+			if (!inMenu)
+			{
+				Camera.main.GetComponent<CameraFollow>().offset.x = 0;
+				GetComponent<PlayerPhysics>().gravity = -25f;
+				
+			} else
+			{
+				Camera.main.GetComponent<CameraFollow>().offset.x = 3;
+			}
 		}
 
 		/// <summary>
