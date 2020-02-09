@@ -27,35 +27,32 @@ public class RepairBot : MonoBehaviour
     public void BotRepair()
     {
         ++repairBot;
-        string loaddir;
-        if (repairBot == 1)
-        {
-            loaddir = "Animations/p1_player_0";
-        }
-        else if (repairBot == 2)
+    if (repairBot == 2)
         {
             var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase2"), m_t.position, Quaternion.identity);
             Camera.main.GetComponent<CameraFollow>().target = x;
-            loaddir = "Animations/p2_player";
         }
         else if (repairBot == 3)
         {
-            loaddir = "Animations/p3_player";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase3"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
         else if (repairBot == 4)
         {
-            //The person who wrote that in all upper case should die.
-            loaddir = "Animations/p4_PLAYER";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase4"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
         else if (repairBot == 5)
         {
-            //NO PLAYER ANIMATOR FOR P5
-            loaddir = "Animations/p4_PLAYER";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase5"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
+            
         }
         else
         {
-            loaddir = "Animations/p1_player_0";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase1"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
-        //m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(loaddir);
+        Destroy(this.gameObject);
     }
 }
