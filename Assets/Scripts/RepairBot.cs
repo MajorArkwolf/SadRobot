@@ -8,12 +8,14 @@ public class RepairBot : MonoBehaviour
     Animator m_animator;
     SpriteRenderer m_spr;
     PlayerPhysics m_pp;
+    Transform m_t;
     // Start is called before the first frame update
     void Start()
     {
         m_spr = this.gameObject.GetComponent<SpriteRenderer>();
         m_animator = this.gameObject.GetComponent<Animator>();
         m_pp = this.gameObject.GetComponent<PlayerPhysics>();
+        m_t = this.gameObject.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -25,33 +27,32 @@ public class RepairBot : MonoBehaviour
     public void BotRepair()
     {
         ++repairBot;
-        string loaddir;
-        if (repairBot == 1)
+    if (repairBot == 2)
         {
-            loaddir = "Animations/p1_player_0";
-        }
-        else if (repairBot == 2)
-        {
-            loaddir = "Animations/p2_player";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase2"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
         else if (repairBot == 3)
         {
-            loaddir = "Animations/p3_player";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase3"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
         else if (repairBot == 4)
         {
-            //The person who wrote that in all upper case should die.
-            loaddir = "Animations/p4_PLAYER";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase4"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
         else if (repairBot == 5)
         {
-            //NO PLAYER ANIMATOR FOR P5
-            loaddir = "Animations/p4_PLAYER";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase5"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
+            
         }
         else
         {
-            loaddir = "Animations/p1_player_0";
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase1"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
         }
-        m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(loaddir);
+        Destroy(this.gameObject);
     }
 }
