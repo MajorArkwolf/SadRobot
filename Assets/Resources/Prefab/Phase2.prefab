@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4433103656242214229}
   - component: {fileID: 1262114370805796699}
   m_Layer: 8
-  m_Name: Phase1
+  m_Name: Phase2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbf8463ad92d5848b5e309762bfcdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repairBot: 1
+  repairBot: 2
 --- !u!61 &1262114370805796679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   oneWayPlatformMask:
     serializedVersion: 2
     m_Bits: 2048
-  slopeLimit: 30
+  slopeLimit: 28
   jumpingThreshold: 0.07
   slopeSpeedMultiplier:
     serializedVersion: 2
@@ -238,7 +238,7 @@ MonoBehaviour:
   pushSpeed: 4
   groundDamping: 20
   inAirDamping: 5
-  jumpHeight: 3
+  jumpHeight: 0.25
   pickupReset: 0.5
 --- !u!95 &1262114370805796699
 Animator:
@@ -250,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 1262114370805796674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2297d278517b8ac49a77635ddc7de639, type: 2}
+  m_Controller: {fileID: 9100000, guid: d6a7fafe852c010459e2f1b6fae76ccf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

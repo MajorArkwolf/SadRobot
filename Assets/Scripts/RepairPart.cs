@@ -18,10 +18,11 @@ public class RepairPart : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<RepairBot>().BotRepair();
             Destroy(this.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }

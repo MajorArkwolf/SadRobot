@@ -8,12 +8,14 @@ public class RepairBot : MonoBehaviour
     Animator m_animator;
     SpriteRenderer m_spr;
     PlayerPhysics m_pp;
+    Transform m_t;
     // Start is called before the first frame update
     void Start()
     {
         m_spr = this.gameObject.GetComponent<SpriteRenderer>();
         m_animator = this.gameObject.GetComponent<Animator>();
         m_pp = this.gameObject.GetComponent<PlayerPhysics>();
+        m_t = this.gameObject.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,8 @@ public class RepairBot : MonoBehaviour
         }
         else if (repairBot == 2)
         {
+            var x = Instantiate(Resources.Load<GameObject>("Prefab/Phase2"), m_t.position, Quaternion.identity);
+            Camera.main.GetComponent<CameraFollow>().target = x;
             loaddir = "Animations/p2_player";
         }
         else if (repairBot == 3)
@@ -52,6 +56,6 @@ public class RepairBot : MonoBehaviour
         {
             loaddir = "Animations/p1_player_0";
         }
-        m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(loaddir);
+        //m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(loaddir);
     }
 }

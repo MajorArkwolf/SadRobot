@@ -7,7 +7,7 @@ public class NextScene : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(LoadNextScene(scene.name));
@@ -15,8 +15,8 @@ public class NextScene : MonoBehaviour
     }
     private string LoadNextScene(string name)
     {
-        string newName;
 
+        string newName;
         if (name == "Level1")
         {
             newName = "Level2";
