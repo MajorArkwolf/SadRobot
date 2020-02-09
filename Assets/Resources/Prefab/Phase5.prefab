@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4433103656242214229}
   - component: {fileID: 1262114370805796699}
   m_Layer: 8
-  m_Name: Phase2
+  m_Name: Phase5
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbf8463ad92d5848b5e309762bfcdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repairBot: 2
+  repairBot: 5
 --- !u!61 &1262114370805796679
 BoxCollider2D:
   m_ObjectHideFlags: 0
