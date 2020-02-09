@@ -370,7 +370,22 @@ PrefabInstance:
     - target: {fileID: 3097797095132552713, guid: d70d2b8bebc9bc14aacb15881949417b,
         type: 3}
       propertyPath: m_AllowDynamicResolution
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097797095132552713, guid: d70d2b8bebc9bc14aacb15881949417b,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8.429158
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097797095132552713, guid: d70d2b8bebc9bc14aacb15881949417b,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097797095132552713, guid: d70d2b8bebc9bc14aacb15881949417b,
+        type: 3}
+      propertyPath: m_HDR
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3097797095132552715, guid: d70d2b8bebc9bc14aacb15881949417b,
         type: 3}
