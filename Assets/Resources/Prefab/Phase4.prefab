@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4433103656242214229}
   - component: {fileID: 1262114370805796699}
   m_Layer: 8
-  m_Name: Phase2
+  m_Name: Phase4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbf8463ad92d5848b5e309762bfcdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repairBot: 2
+  repairBot: 4
 --- !u!61 &1262114370805796679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  speed: 1
+  speed: 4
 --- !u!114 &4433103656242214229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 1262114370805796674}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d6a7fafe852c010459e2f1b6fae76ccf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 93f687878c7afa44492dc7c5b806e6e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
