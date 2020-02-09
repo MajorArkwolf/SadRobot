@@ -37,22 +37,22 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6994173541508956929}
-    m_Position: {x: 96, y: 252, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6182562728879970073}
-    m_Position: {x: 336, y: 300, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -1750012343742741328}
-    m_Position: {x: 576, y: 264, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7699913063106051784}
     m_Position: {x: 624, y: 120, z: 0}
   - serializedVersion: 1
+    m_State: {fileID: 6182562728879970073}
+    m_Position: {x: 96, y: 120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1750012343742741328}
+    m_Position: {x: 660, y: 12, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7699913063106051784}
+    m_Position: {x: 72, y: -12, z: 0}
+  - serializedVersion: 1
     m_State: {fileID: 1102172776866334132}
-    m_Position: {x: 324, y: -24, z: 0}
+    m_Position: {x: 96, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102753413589674026}
-    m_Position: {x: 576, y: 24, z: 0}
+    m_Position: {x: 636, y: 252, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101629081199187260}
@@ -65,10 +65,10 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 360, y: 120, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: -168, y: 0, z: 0}
   m_ExitPosition: {x: 120, y: 384, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -6994173541508956929}
+  m_DefaultState: {fileID: 7699913063106051784}
 --- !u!1102 &-1750012343742741328
 AnimatorState:
   serializedVersion: 5
@@ -109,19 +109,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: idle
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -148,6 +148,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: idle
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: jump
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1750012343742741328}
@@ -177,6 +180,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: idle
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: jump
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7699913063106051784}
   m_Solo: 0
@@ -201,6 +207,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: right
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: jump
@@ -230,6 +239,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: right
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: jump
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6182562728879970073}
   m_Solo: 0
@@ -255,6 +270,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: right
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: jump
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6994173541508956929}
   m_Solo: 0
@@ -279,6 +300,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: right
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: idle
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: jump
