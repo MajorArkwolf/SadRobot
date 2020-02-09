@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4433103656242214229}
   - component: {fileID: 1262114370805796699}
   m_Layer: 8
-  m_Name: Phase2
+  m_Name: Phase4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 29a9ab7ec3d73fe4082a9741737295e0, type: 3}
+  m_Sprite: {fileID: 21300034, guid: f16ddc3b0347d0b4c80d4cfead05df58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   pushSpeed: 4
   groundDamping: 20
   inAirDamping: 5
-  jumpHeight: 0.25
+  jumpHeight: 2.5
   pickupReset: 0.5
 --- !u!95 &1262114370805796699
 Animator:
