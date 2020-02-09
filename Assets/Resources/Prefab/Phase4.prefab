@@ -238,7 +238,7 @@ MonoBehaviour:
   pushSpeed: 4
   groundDamping: 20
   inAirDamping: 5
-  jumpHeight: 2.5
+  jumpHeight: 3
   pickupReset: 0.5
 --- !u!95 &1262114370805796699
 Animator:
