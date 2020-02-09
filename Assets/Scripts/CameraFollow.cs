@@ -5,34 +5,33 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
-    [SerializeField]
-    GameObject target;
+    public GameObject target;
 
-    [SerializeField]
-    Vector3 offset;
+    public Vector3 offset = new Vector3();
 
-    [SerializeField]
-    int zLock;
+    public int zLock = -10;
 
-    [SerializeField]
-    float smoothFactor;
+    public float smoothFactor = 10f;
 
-    [SerializeField]
-    float smallCutoff;
+    public float smallCutoff = 0.05f;
 
     Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = target.transform.position;
+        FindPlayer();
+        transform.position = target.transform.position + offset;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        FindPlayer();
         Vector3 newPos = target.transform.position + offset;
         newPos.z = zLock;
+
+
 
         if (Vector3.Distance(transform.position, newPos) < smallCutoff)
         {
@@ -43,6 +42,14 @@ public class CameraFollow : MonoBehaviour
         {
             transform.position = Vector3.SmoothDamp(transform.position, newPos,
                 ref velocity, smoothFactor * Time.deltaTime);
+        }
+    }
+
+    void FindPlayer()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindWithTag("Player");
         }
     }
 }

@@ -32,6 +32,7 @@ TextureImporter:
     21300054: p4_push2_right
     21300056: p4_push3_right
     21300058: p4_push4_right
+    21300060: p4_player_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -448,7 +449,7 @@ TextureImporter:
       name: p4_jump3_right
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 96
         width: 32
         height: 32
@@ -468,7 +469,7 @@ TextureImporter:
       name: p4_jump4_right
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 96
         width: 32
         height: 32
@@ -720,6 +721,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8a4182c3ca053ce4995f2372c3f16d66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p4_player_0
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 29
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96899ec15a264cd438d7d8ff93c5b763
       vertices: []
       indices: 
       edges: []
