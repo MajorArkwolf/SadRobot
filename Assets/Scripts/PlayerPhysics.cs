@@ -105,81 +105,73 @@ public class PlayerPhysics : MonoBehaviour {
 		if (_controller.isGrounded)
 			_velocity.y = 0;
 
-		if (Input.GetKey(KeyCode.RightArrow)) {
-			normalizedHorizontalSpeed = 1;
-
-
-			if (transform.localScale.x < 0f)
-				//transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-			if (_controller.isGrounded) {
-				//_animator.Play(Animator.StringToHash("Run"));
-			}
-		} else if (Input.GetKey(KeyCode.LeftArrow)) {
-			normalizedHorizontalSpeed = -1;
-
-
-			if (transform.localScale.x > 0f)
-				//transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
-			if (_controller.isGrounded) {
-				//_animator.Play(Animator.StringToHash("Run"));
-			}
-		} else {
-			normalizedHorizontalSpeed = 0;
-
-			// Might be idle, no input
-
-			if (_controller.isGrounded) {
-				//_animator.Play(Animator.StringToHash("Idle"));
-			}
-		}
-
-
-		// we can only jump whilst grounded
-		if (_controller.isGrounded && Input.GetKeyDown(KeyCode.UpArrow)) {
-			_velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
-			transform.SetParent(null);
-			//_animator.Play(Animator.StringToHash("Jump"));
-		}
-
-		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
-		var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
-		_velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
-
-		// apply gravity before moving
-		_velocity.y += gravity * Time.deltaTime;
-
-		// if holding down bump up our movement amount and turn off one way platform detection for a frame.
-		// this lets us jump down through one way platforms
-		if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow)) {
-			_velocity.y *= 3f;
-			_controller.ignoreOneWayPlatformsThisFrame = true;
-		}
-
-		_controller.move(_velocity * Time.deltaTime);
-
-
-		if (Mathf.Abs(_velocity.x) > 0.01f)
+		if (!GetComponent<CharacterController2D>().inMenu)
 		{
-			_animator.SetBool("idle", false);
-			if (_velocity.x > 0f)
+			if (Input.GetKey(KeyCode.RightArrow))
 			{
-				_animator.SetBool("right", true);
-			}
-			else if (_velocity.x < 0f)
-			{
-				_animator.SetBool("right", false);
-			}
-		}
-		else
-		{
-			//Debug.Log("idled");
-			_animator.SetBool("idle", true);
-		}
+				normalizedHorizontalSpeed = 1;
 
-		// grab our current _velocity to use as a base for all calculations
-		_velocity = _controller.velocity;
+			}
+			else if (Input.GetKey(KeyCode.LeftArrow))
+			{
+				normalizedHorizontalSpeed = -1;
+
+			}
+			else
+			{
+				normalizedHorizontalSpeed = 0;
+
+			}
+
+
+			// we can only jump whilst grounded
+			if (_controller.isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+			{
+				_velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
+				transform.SetParent(null);
+				_animator.SetBool("jump", true);
+				//_animator.Play(Animator.StringToHash("Jump"));
+			}
+
+			// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
+			var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
+			_velocity.x = Mathf.Lerp(_velocity.x, normalizedHorizontalSpeed * runSpeed, Time.deltaTime * smoothedMovementFactor);
+
+			// apply gravity before moving
+			_velocity.y += gravity * Time.deltaTime;
+
+			// if holding down bump up our movement amount and turn off one way platform detection for a frame.
+			// this lets us jump down through one way platforms
+			if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow))
+			{
+				_velocity.y *= 3f;
+				_controller.ignoreOneWayPlatformsThisFrame = true;
+			}
+
+			_controller.move(_velocity * Time.deltaTime);
+
+
+			if (Mathf.Abs(_velocity.x) > 0.01f)
+			{
+				_animator.SetBool("idle", false);
+				if (_velocity.x > 0f)
+				{
+					_animator.SetBool("right", true);
+				}
+				else if (_velocity.x < 0f)
+				{
+					_animator.SetBool("right", false);
+				}
+			}
+			else
+			{
+				//Debug.Log("idled");
+				_animator.SetBool("idle", true);
+			}
+
+			// grab our current _velocity to use as a base for all calculations
+			_velocity = _controller.velocity;
+		}
 	}
 
 }
