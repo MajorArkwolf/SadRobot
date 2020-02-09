@@ -132,6 +132,10 @@ public class PlayerPhysics : MonoBehaviour {
 				_animator.SetBool("jump", true);
 				//_animator.Play(Animator.StringToHash("Jump"));
 			}
+			else if (_controller.isGrounded)
+			{
+				_animator.SetBool("jump", false);
+			}
 
 			// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
 			var smoothedMovementFactor = _controller.isGrounded ? groundDamping : inAirDamping; // how fast do we change direction?
